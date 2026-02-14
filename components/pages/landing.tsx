@@ -1,17 +1,44 @@
 'use client';
 
 import { Button } from '@/components/ui/button'
+<<<<<<< HEAD
 import { Utensils, Sparkles, Leaf, TrendingUp, Heart, LayoutDashboard, Search, UtensilsCrossed, Zap } from 'lucide-react'
 
 interface LandingPageProps {
   onStartQuiz: () => void
   onNavigate: (view: any) => void
+=======
+import { Utensils, Sparkles, Leaf, TrendingUp, Heart } from 'lucide-react'
+
+interface LandingPageProps {
+  onStartQuiz: () => void
+  onNavigate: (view: 'recommendations') => void
+>>>>>>> 1154a2da7d7b6d875836dc60b9665c645596fa24
   onMealTrackerClick?: () => void
 }
 
 export function LandingPage({ onStartQuiz, onNavigate, onMealTrackerClick }: LandingPageProps) {
   return (
+<<<<<<< HEAD
     <div className="min-h-screen bg-gradient-to-b from-background via-background to-primary/5 flex flex-col pt-10">
+=======
+    <div className="min-h-screen bg-gradient-to-b from-background via-background to-primary/5 flex flex-col">
+      {/* Header */}
+      <header className="py-8 px-4 sm:px-6 lg:px-8 border-b border-border/30 bg-white/40 backdrop-blur-sm">
+        <div className="max-w-6xl mx-auto flex items-center gap-3 justify-between">
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-lg">
+              <Utensils className="w-6 h-6 text-primary-foreground" />
+            </div>
+            <div>
+              <h1 className="text-2xl sm:text-3xl font-black text-foreground">CraveFit</h1>
+              <p className="text-xs text-primary font-semibold">Smart Eating Habits</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+>>>>>>> 1154a2da7d7b6d875836dc60b9665c645596fa24
       {/* Hero Section */}
       <div className="flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
         <div className="w-full max-w-3xl space-y-10 text-center">
@@ -58,6 +85,7 @@ export function LandingPage({ onStartQuiz, onNavigate, onMealTrackerClick }: Lan
             </div>
           </div>
 
+<<<<<<< HEAD
           {/* Navigation hint */}
           <div className="pt-4 pb-8 scale-95 opacity-50">
             <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest italic animate-pulse">
@@ -186,6 +214,35 @@ export function LandingPage({ onStartQuiz, onNavigate, onMealTrackerClick }: Lan
                 </li>
               </ul>
             </div>
+=======
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+            <Button
+              onClick={onStartQuiz}
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground text-base sm:text-lg px-10 py-7 rounded-xl font-bold transition-all hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-1"
+            >
+              Start the Quiz
+            </Button>
+            <Button
+              onClick={() => onNavigate('recommendations')}
+              variant="outline"
+              size="lg"
+              className="border-2 border-primary text-primary hover:bg-primary/10 text-base sm:text-lg px-10 py-7 rounded-xl font-bold transition-all hover:shadow-lg"
+            >
+              Browse Foods
+            </Button>
+            {onMealTrackerClick && (
+              <Button
+                onClick={onMealTrackerClick}
+                variant="outline"
+                size="lg"
+                className="border-2 border-secondary text-secondary-foreground hover:bg-secondary/10 text-base sm:text-lg px-10 py-7 rounded-xl font-bold transition-all hover:shadow-lg bg-transparent"
+              >
+                Track Meals
+              </Button>
+            )}
+>>>>>>> 1154a2da7d7b6d875836dc60b9665c645596fa24
           </div>
 
           {/* Trust Indicators */}

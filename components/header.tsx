@@ -1,14 +1,20 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
+<<<<<<< HEAD
 import { Utensils, LayoutDashboard, Search, UtensilsCrossed, LogIn, LogOut, Sparkles } from 'lucide-react'
 import { authStorage } from '@/lib/auth'
+=======
+import { Utensils, LayoutDashboard, Search, UtensilsCrossed, LogIn, LogOut, Sparkles, UserCircle } from 'lucide-react'
+import { supabase } from '@/lib/supabase'
+>>>>>>> 1154a2da7d7b6d875836dc60b9665c645596fa24
 import { useRouter } from 'next/navigation'
 
 interface HeaderProps {
     currentView: string
     onNavigate: (view: any) => void
     isLoggedIn: boolean
+<<<<<<< HEAD
 }
 
 export function Header({ currentView, onNavigate, isLoggedIn }: HeaderProps) {
@@ -17,6 +23,20 @@ export function Header({ currentView, onNavigate, isLoggedIn }: HeaderProps) {
     const handleLogout = () => {
         authStorage.logout()
         window.location.reload()
+=======
+    userData?: {
+        full_name?: string
+        avatar_url?: string
+    }
+}
+
+export function Header({ currentView, onNavigate, isLoggedIn, userData }: HeaderProps) {
+    const router = useRouter()
+
+    const handleLogout = async () => {
+        await supabase.auth.signOut()
+        router.push('/')
+>>>>>>> 1154a2da7d7b6d875836dc60b9665c645596fa24
     }
 
     const handleLogin = () => {
@@ -78,6 +98,25 @@ export function Header({ currentView, onNavigate, isLoggedIn }: HeaderProps) {
                         <UtensilsCrossed className="w-4 h-4" />
                         <span className="hidden md:inline">Tracker</span>
                     </Button>
+<<<<<<< HEAD
+=======
+
+                    <Button
+                        variant={currentView === 'profile' ? 'secondary' : 'ghost'}
+                        size="sm"
+                        onClick={() => onNavigate('profile')}
+                        className="flex items-center gap-2 font-semibold p-1 pr-3 rounded-full"
+                    >
+                        <div className="w-7 h-7 rounded-full overflow-hidden bg-muted flex items-center justify-center border border-border/50">
+                            {userData?.avatar_url ? (
+                                <img src={userData.avatar_url} alt="Profile" className="w-full h-full object-cover" />
+                            ) : (
+                                <UserCircle className="w-5 h-5 text-muted-foreground" />
+                            )}
+                        </div>
+                        <span className="hidden md:inline">{userData?.full_name?.split(' ')[0] || 'Profile'}</span>
+                    </Button>
+>>>>>>> 1154a2da7d7b6d875836dc60b9665c645596fa24
                 </nav>
 
                 {/* Auth Actions */}
