@@ -38,16 +38,41 @@
     "@radix-ui/react-toggle-group": "1.1.1",
     "@radix-ui/react-tooltip": "1.1.6",
     "@supabase/ssr": "^0.8.0",
+<<<<<<< HEAD
     "@supabase/supabase-js": "^2.95.3",
+=======
+>>>>>>> origin/main
     "autoprefixer": "^10.4.20",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "1.1.1",
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+    "date-fns": "4.1.0",
+>>>>>>> 1154a2da7d7b6d875836dc60b9665c645596fa24
+>>>>>>> origin/main
+>>>>>>> origin/main
     "embla-carousel-react": "8.5.1",
     "input-otp": "1.4.1",
     "lucide-react": "^0.544.0",
     "next": "16.1.6",
     "next-themes": "^0.4.6",
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+    "react": "^19",
+    "react-day-picker": "8.10.1",
+    "react-dom": "^19",
+>>>>>>> 1154a2da7d7b6d875836dc60b9665c645596fa24
+>>>>>>> origin/main
+>>>>>>> origin/main
     "react-hook-form": "^7.54.1",
     "react-resizable-panels": "^2.1.7",
     "recharts": "2.15.0",
@@ -55,19 +80,62 @@
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^1.1.2",
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
+>>>>>>> origin/main
     "zod": "^3.24.1",
     "date-fns": "^3.6.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-day-picker": "8.10.1"
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+    "zod": "^3.24.1"
+>>>>>>> 1154a2da7d7b6d875836dc60b9665c645596fa24
+>>>>>>> origin/main
+>>>>>>> origin/main
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.13",
     "@types/node": "^22",
+<<<<<<< HEAD
     "@types/react": "^18",
     "@types/react-dom": "^18",
+=======
+<<<<<<< HEAD
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+=======
+<<<<<<< HEAD
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+=======
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+>>>>>>> 1154a2da7d7b6d875836dc60b9665c645596fa24
+>>>>>>> origin/main
+>>>>>>> origin/main
     "postcss": "^8.5",
     "tailwindcss": "^3.4.17",
     "typescript": "5.7.3"
   }
+<<<<<<< HEAD
 }
+=======
+<<<<<<< HEAD
+}
+=======
+<<<<<<< HEAD
+}
+=======
+}
+>>>>>>> 1154a2da7d7b6d875836dc60b9665c645596fa24
+>>>>>>> origin/main
+>>>>>>> origin/main

@@ -15,6 +15,21 @@ import {
 import { MealEntryForm } from '@/components/meal-entry-form'
 import { NutritionProgressBar } from '@/components/nutrition-progress-bar'
 import { MealSuggestions } from '@/components/meal-suggestions'
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import { mockProfile } from '@/lib/mock-profile'
+import { calcCalories } from '@/lib/calc-calories'
+import { fetchNutrition } from '@/lib/nutrition-api'
+=======
+<<<<<<< HEAD
+import { mockProfile } from '@/lib/mock-profile'
+import { calcCalories } from '@/lib/calc-calories'
+import { fetchNutrition } from '@/lib/nutrition-api'
+=======
+>>>>>>> 1154a2da7d7b6d875836dc60b9665c645596fa24
+>>>>>>> origin/main
+>>>>>>> origin/main
 
 interface MealTrackerProps {
   onBack: () => void
@@ -43,6 +58,46 @@ export function MealTracker({ onBack }: MealTrackerProps) {
   }, [meals, selectedDate])
 
   const progress = calculateProgress(meals)
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
+
+  // 🔥 Calculate calorie goal from profile
+  const calorieGoal = calcCalories(mockProfile)
+
+  // Override only calories (macros stay same)
+  const dynamicGoals = {
+    ...DEFAULT_DAILY_GOALS,
+    calories: calorieGoal,
+  }
+
+  const dailyProgress: DailyProgress = {
+    date: selectedDate,
+    meals,
+    goals: dynamicGoals,
+    ...progress,
+  }
+
+  /*
+  🔗 FUTURE SUPABASE INTEGRATION
+
+  Replace mockProfile with:
+
+  const { data } = await supabase
+    .from("users")
+    .select("*")
+    .eq("id", userId)
+    .single()
+  */
+
+
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> origin/main
   const dailyProgress: DailyProgress = {
     date: selectedDate,
     meals,
@@ -50,6 +105,11 @@ export function MealTracker({ onBack }: MealTrackerProps) {
     ...progress,
   }
 
+<<<<<<< HEAD
+=======
+>>>>>>> 1154a2da7d7b6d875836dc60b9665c645596fa24
+>>>>>>> origin/main
+>>>>>>> origin/main
   const suggestedMeals = getSuggestedMeals(dailyProgress)
 
   const handleAddMeal = (meal: MealEntry) => {
@@ -282,13 +342,43 @@ export function MealTracker({ onBack }: MealTrackerProps) {
                 </Button>
               </Card>
             ) : (
+<<<<<<< HEAD
               <div className="space-y-4">
+=======
+<<<<<<< HEAD
+              <div className="space-y-4 max-h-[260px] overflow-y-auto pr-2">
+=======
+<<<<<<< HEAD
+              <div className="space-y-4 max-h-[260px] overflow-y-auto pr-2">
+=======
+              <div className="space-y-4">
+>>>>>>> 1154a2da7d7b6d875836dc60b9665c645596fa24
+>>>>>>> origin/main
+>>>>>>> origin/main
                 {meals.map((meal) => (
                   <Card key={meal.id} className="p-5 hover:shadow-md transition-shadow">
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-3">
+<<<<<<< HEAD
                           <p className="font-bold text-lg text-foreground">{meal.name}</p>
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
+                          <p className="font-bold text-lg text-foreground">
+                            {meal.detectedFood
+                              ? `${meal.detectedFood} (${meal.name})`
+                              : meal.name}
+                          </p>
+<<<<<<< HEAD
+=======
+=======
+                          <p className="font-bold text-lg text-foreground">{meal.name}</p>
+>>>>>>> 1154a2da7d7b6d875836dc60b9665c645596fa24
+>>>>>>> origin/main
+>>>>>>> origin/main
                           <span className="text-xs font-semibold bg-primary/10 text-primary px-3 py-1 rounded-full">
                             {meal.time}
                           </span>

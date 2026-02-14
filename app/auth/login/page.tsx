@@ -9,7 +9,11 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { ArrowRight, Utensils, Heart, Leaf } from 'lucide-react'
+<<<<<<< HEAD
 import { supabase } from '@/lib/supabase'
+=======
+import { authStorage } from '@/lib/auth'
+>>>>>>> origin/main
 
 export default function Page() {
   const [email, setEmail] = useState('')
@@ -28,6 +32,7 @@ export default function Page() {
         throw new Error('Please enter email and password')
       }
 
+<<<<<<< HEAD
       const { data, error } = await supabase.auth.signInWithPassword({
         email,
         password,
@@ -38,6 +43,16 @@ export default function Page() {
       router.push('/?view=dashboard')
     } catch (error: any) {
       setError(error.message || 'An error occurred during login')
+=======
+      const user = authStorage.login(email, password)
+      if (!user) {
+        throw new Error('Invalid credentials')
+      }
+
+      router.push('/')
+    } catch (error: unknown) {
+      setError(error instanceof Error ? error.message : 'An error occurred')
+>>>>>>> origin/main
     } finally {
       setIsLoading(false)
     }
@@ -82,7 +97,11 @@ export default function Page() {
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <Label htmlFor="password" className="font-semibold text-foreground">Password</Label>
+<<<<<<< HEAD
                 <Link href="/auth/forgot-password" title="Reset your password" className="text-xs font-semibold text-primary hover:text-primary/80 transition-colors">
+=======
+                <Link href="#" className="text-xs font-semibold text-primary hover:text-primary/80 transition-colors">
+>>>>>>> origin/main
                   Forgot?
                 </Link>
               </div>

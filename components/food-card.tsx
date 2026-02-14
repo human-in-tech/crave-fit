@@ -1,5 +1,18 @@
 'use client'
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import type { Food } from '@/lib/mock-foods'
+import { Card } from '@/components/ui/card'
+import Image from 'next/image'
+
+interface FoodCardProps {
+  food: Food
+  matchScore?: number
+  onClick?: () => void
+=======
+>>>>>>> origin/main
 import React from "react"
 
 import type { Food } from '@/lib/mock-foods'
@@ -11,6 +24,10 @@ interface FoodCardProps {
   food: Food
   healthPreference?: number
   matchScore?: number
+<<<<<<< HEAD
+=======
+>>>>>>> origin/main
+>>>>>>> origin/main
 }
 
 function getHealthScoreColor(score: number): string {
@@ -19,6 +36,19 @@ function getHealthScoreColor(score: number): string {
   return '#ef4444'
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+export function FoodCard({ food, matchScore, onClick }: FoodCardProps) {
+  const healthColor = getHealthScoreColor(food.healthScore)
+
+  return (
+    <Card
+      onClick={onClick}
+      className="overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer border border-border/50 hover:border-primary/30 relative"
+    >
+=======
+>>>>>>> origin/main
 function getPreferenceIndicator(foodHealth: number, preference: number): { icon: React.ReactNode; label: string; color: string } {
   const pref = preference || 50
   
@@ -42,6 +72,10 @@ export function FoodCard({ food, healthPreference = 50, matchScore }: FoodCardPr
 
   return (
     <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer border border-border/50 hover:border-primary/30 relative">
+<<<<<<< HEAD
+=======
+>>>>>>> origin/main
+>>>>>>> origin/main
       {/* Image */}
       <div className="h-56 w-full relative overflow-hidden bg-muted">
         <Image
@@ -50,6 +84,11 @@ export function FoodCard({ food, healthPreference = 50, matchScore }: FoodCardPr
           fill
           className="object-cover group-hover:scale-110 transition-transform duration-500"
         />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> origin/main
         {/* Preference Badge */}
         {preference.icon && (
           <div className={`absolute top-3 right-3 flex items-center gap-1.5 px-3 py-2 rounded-full bg-white/90 backdrop-blur-sm ${preference.color} font-semibold text-xs shadow-lg`}>
@@ -57,16 +96,42 @@ export function FoodCard({ food, healthPreference = 50, matchScore }: FoodCardPr
             {preference.label}
           </div>
         )}
+<<<<<<< HEAD
+=======
+>>>>>>> origin/main
+>>>>>>> origin/main
       </div>
 
       {/* Content */}
       <div className="p-6 space-y-4 bg-white">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        
+        {/* Name and Health Score */}
+        <div className="flex items-start justify-between gap-3">
+          <h3 className="font-bold text-lg text-foreground flex-1 line-clamp-2">
+            {food.name}
+          </h3>
+          <div
+            className="flex-shrink-0 w-14 h-14 rounded-full flex items-center justify-center font-bold text-base shadow-md"
+            style={{
+              backgroundColor: `${healthColor}15`,
+              color: healthColor,
+              border: `2px solid ${healthColor}`
+            }}
+=======
+>>>>>>> origin/main
         {/* Name and Health Score */}
         <div className="flex items-start justify-between gap-3">
           <h3 className="font-bold text-lg text-foreground flex-1 line-clamp-2">{food.name}</h3>
           <div
             className="flex-shrink-0 w-14 h-14 rounded-full flex items-center justify-center font-bold text-base shadow-md"
             style={{ backgroundColor: `${healthColor}15`, color: healthColor, border: `2px solid ${healthColor}` }}
+<<<<<<< HEAD
+=======
+>>>>>>> origin/main
+>>>>>>> origin/main
           >
             {food.healthScore}
           </div>
@@ -75,6 +140,59 @@ export function FoodCard({ food, healthPreference = 50, matchScore }: FoodCardPr
         {/* Nutrition Info Grid */}
         <div className="grid grid-cols-3 gap-3 py-4 border-y border-border/30">
           <div className="text-center">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+            <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+              Calories
+            </p>
+            <p className="text-lg font-bold text-foreground mt-1">
+              {food.calories}
+            </p>
+          </div>
+
+          <div className="text-center border-x border-border/30">
+            <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+              Protein
+            </p>
+            <p className="text-lg font-bold text-foreground mt-1">
+              {food.protein}g
+            </p>
+          </div>
+
+          <div className="text-center">
+            <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+              Sugar
+            </p>
+            <p className="text-lg font-bold text-foreground mt-1">
+              {food.sugar ?? '-'}g
+            </p>
+          </div>
+        </div>
+
+        {/* Category + Diet + Optional Match */}
+        <div className="flex items-center justify-between gap-2 flex-wrap">
+          <div className="flex gap-2 flex-wrap">
+            {food.category && (
+              <span className="inline-block px-4 py-2 rounded-full text-xs font-semibold bg-primary/10 text-primary">
+                {food.category}
+              </span>
+            )}
+
+            {food.dietType && (
+              <span className="inline-block px-4 py-2 rounded-full text-xs font-semibold bg-muted text-muted-foreground">
+                {food.dietType}
+              </span>
+            )}
+          </div>
+
+          {/* {matchScore !== undefined && (
+            <span className="text-xs font-bold text-primary bg-primary/10 px-3 py-2 rounded-full">
+              {Math.round(matchScore)}%
+            </span> */}
+          {/* )} */}
+=======
+>>>>>>> origin/main
             <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Calories</p>
             <p className="text-lg font-bold text-foreground mt-1">{food.calories}</p>
           </div>
@@ -98,6 +216,10 @@ export function FoodCard({ food, healthPreference = 50, matchScore }: FoodCardPr
               {Math.round(matchScore)}%
             </span>
           )}
+<<<<<<< HEAD
+=======
+>>>>>>> origin/main
+>>>>>>> origin/main
         </div>
       </div>
     </Card>
