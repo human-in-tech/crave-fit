@@ -7,76 +7,25 @@ import { QuizFlow } from '@/components/pages/quiz-flow'
 import { RecommendationsScreen } from '@/components/pages/recommendations'
 import { MealTracker } from '@/components/pages/meal-tracker'
 import { Dashboard } from '@/components/pages/dashboard'
-import { Profile } from '@/components/pages/profile'
-import { Header } from '@/components/header'
-import { supabase } from '@/lib/supabase'
+import { authStorage } from '@/lib/auth'
 
-type PageView = 'dashboard' | 'landing' | 'quiz' | 'recommendations' | 'meal-tracker' | 'profile'
+type PageView = 'dashboard' | 'landing' | 'quiz' | 'recommendations' | 'meal-tracker'
 
 export default function Page() {
   const router = useRouter()
-  const [currentView, setCurrentView] = useState<PageView>('landing')
+  const [currentView, setCurrentView] = useState<PageView>('dashboard')
   const [quizAnswers, setQuizAnswers] = useState<Record<string, string>>({})
   const [healthPreference, setHealthPreference] = useState(50)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
-  const [userData, setUserData] = useState<any>(null)
-
-  const fetchProfile = async (userId: string) => {
-    const { data } = await supabase
-      .from('profiles')
-      .select('full_name, avatar_url, age, weight, height, goal, allergies')
-      .eq('id', userId)
-      .single()
-
-    if (data) {
-      setUserData({ ...data, id: userId })
-    }
-  }
 
   useEffect(() => {
-    // Check initial session
-    const checkSession = async () => {
-      const { data: { session } } = await supabase.auth.getSession()
-      if (session) {
-        setIsLoggedIn(true)
-        fetchProfile(session.user.id)
-
-        // Check for view redirect
-        const urlParams = new URLSearchParams(window.location.search)
-        const view = urlParams.get('view') as PageView
-        if (view === 'dashboard') {
-          setCurrentView('dashboard')
-          window.history.replaceState({}, '', '/')
-        }
-      }
-    }
-
-    checkSession()
-
-    // Listen for auth changes
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
-      if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {
-        setIsLoggedIn(true)
-        if (session) fetchProfile(session.user.id)
-      } else if (event === 'SIGNED_OUT') {
-        setIsLoggedIn(false)
-        setUserData(null)
-        setCurrentView('landing')
-      }
-    })
-
-    return () => {
-      subscription.unsubscribe()
-    }
-  }, [])
-
-  const handleNavigate = (view: PageView) => {
-    if (view !== 'landing' && !isLoggedIn) {
+    const user = authStorage.getUser()
+    if (!user) {
       router.push('/auth/login')
-      return
+    } else {
+      setIsLoggedIn(true)
     }
-    setCurrentView(view)
-  }
+  }, [router])
 
   const handleStartQuiz = () => {
     setCurrentView('quiz')
@@ -97,27 +46,29 @@ export default function Page() {
     setCurrentView('landing')
   }
 
-  // No early return for !isLoggedIn to allow Landing Page visibility
+  if (!isLoggedIn) {
+    return (
+      <main className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-12 h-12 border-4 border-primary/20 border-t-primary rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-muted-foreground font-semibold">Loading CraveFit...</p>
+        </div>
+      </main>
+    )
+  }
 
   return (
     <main className="min-h-screen bg-background">
-      <Header
-        currentView={currentView}
-        onNavigate={handleNavigate}
-        isLoggedIn={isLoggedIn}
-        userData={userData}
-      />
       {currentView === 'dashboard' && (
-        <Dashboard
-          onNavigate={handleNavigate}
-          userData={userData}
+        <Dashboard 
+          onNavigate={setCurrentView}
         />
       )}
       {currentView === 'landing' && (
-        <LandingPage
-          onStartQuiz={() => handleNavigate('quiz')}
-          onNavigate={handleNavigate}
-          onMealTrackerClick={() => handleNavigate('meal-tracker')}
+        <LandingPage 
+          onStartQuiz={handleStartQuiz} 
+          onNavigate={setCurrentView}
+          onMealTrackerClick={() => setCurrentView('meal-tracker')}
         />
       )}
       {currentView === 'quiz' && (
@@ -133,17 +84,11 @@ export default function Page() {
           healthPreference={healthPreference}
           onHealthPreferenceChange={setHealthPreference}
           onBack={handleBackToLanding}
-          onMealTrackerClick={() => handleNavigate('meal-tracker')}
+          onMealTrackerClick={() => setCurrentView('meal-tracker')}
         />
       )}
       {currentView === 'meal-tracker' && (
         <MealTracker onBack={handleBackToLanding} />
-      )}
-      {currentView === 'profile' && (
-        <Profile
-          onBack={() => setCurrentView('dashboard')}
-          onUpdate={() => fetchProfile(userData?.id || '')}
-        />
       )}
     </main>
   )
