@@ -1,8 +1,23 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
+>>>>>>> origin/main
 'use client'
 
 import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { supabase } from '@/lib/supabase'
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> origin/main
+>>>>>>> origin/main
+>>>>>>> origin/main
 import {
   Card,
   CardContent,
@@ -10,6 +25,13 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
+>>>>>>> origin/main
 import { Button } from '@/components/ui/button'
 
 export default function Page() {
@@ -25,12 +47,29 @@ export default function Page() {
     checkSession()
   }, [router])
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+
+export default function Page() {
+>>>>>>> origin/main
+>>>>>>> origin/main
+>>>>>>> origin/main
   return (
     <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10">
       <div className="w-full max-w-sm">
         <div className="flex flex-col gap-6">
           <Card>
             <CardHeader>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
+>>>>>>> origin/main
               <CardTitle className="text-2xl text-center">
                 Check your email!
               </CardTitle>
@@ -52,6 +91,24 @@ export default function Page() {
               >
                 I&apos;ve confirmed, let&apos;s go!
               </Button>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+              <CardTitle className="text-2xl">
+                Thank you for signing up!
+              </CardTitle>
+              <CardDescription>Check your email to confirm</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                You&apos;ve successfully signed up. Please check your email to
+                confirm your account before signing in.
+              </p>
+>>>>>>> origin/main
+>>>>>>> origin/main
+>>>>>>> origin/main
             </CardContent>
           </Card>
         </div>

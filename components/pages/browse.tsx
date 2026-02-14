@@ -20,10 +20,18 @@ function FilterChip({
   return (
     <button
       onClick={onClick}
+<<<<<<< HEAD
       className={`px-4 py-2 rounded-full text-sm font-medium transition ${active
           ? 'bg-primary text-white'
           : 'bg-muted text-muted-foreground hover:bg-muted/70'
         }`}
+=======
+      className={`px-4 py-2 rounded-full text-sm font-medium transition ${
+        active
+          ? 'bg-primary text-white'
+          : 'bg-muted text-muted-foreground hover:bg-muted/70'
+      }`}
+>>>>>>> origin/main
     >
       {label}
     </button>

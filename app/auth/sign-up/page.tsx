@@ -9,7 +9,19 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { ArrowRight, Utensils, Check } from 'lucide-react'
+<<<<<<< HEAD
 import { supabase } from '@/lib/supabase'
+=======
+<<<<<<< HEAD
+import { supabase } from '@/lib/supabase'
+=======
+<<<<<<< HEAD
+import { supabase } from '@/lib/supabase'
+=======
+import { authStorage } from '@/lib/auth'
+>>>>>>> origin/main
+>>>>>>> origin/main
+>>>>>>> origin/main
 
 export default function Page() {
   const [name, setName] = useState('')
@@ -44,6 +56,13 @@ export default function Page() {
     }
 
     try {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
+>>>>>>> origin/main
       const { data, error } = await supabase.auth.signUp({
         email,
         password,
@@ -59,6 +78,21 @@ export default function Page() {
       router.push('/auth/sign-up-success')
     } catch (error: any) {
       setError(error.message || 'An error occurred during sign up')
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+      const user = authStorage.signup(email, password, name)
+      if (!user) {
+        throw new Error('Failed to create account')
+      }
+      router.push('/')
+    } catch (error: unknown) {
+      setError(error instanceof Error ? error.message : 'An error occurred')
+>>>>>>> origin/main
+>>>>>>> origin/main
+>>>>>>> origin/main
     } finally {
       setIsLoading(false)
     }

@@ -4,10 +4,24 @@ export interface Food {
   image: string
   healthScore: number
   calories: number
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  protein: number
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
   carbs?: number
   protein: number
   fat?:number
   dietType?: string
+<<<<<<< HEAD
+=======
+=======
+  protein: number
+>>>>>>> origin/main
+>>>>>>> origin/main
+>>>>>>> origin/main
   sugar: number
   category: string
   cravingMatch: string[]
@@ -16,12 +30,31 @@ export interface Food {
   healthierRecipe?: {
     name: string
     calories: number
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
     carbs?: number
     fat?: number
     protein: number
     sugar: number
     ingredients: string[]
     instructions?: string[]
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> origin/main
+    protein: number
+    sugar: number
+    ingredients: string[]
+    instructions: string[]
+<<<<<<< HEAD
+=======
+>>>>>>> origin/main
+>>>>>>> origin/main
+>>>>>>> origin/main
     healthScore: number
   }
 }
@@ -30,7 +63,15 @@ export const mockFoods: Food[] = [
   {
     id: '1',
     name: 'Crispy Fried Chicken',
+<<<<<<< HEAD
     image: 'https://images.unsplash.com/photo-1626645738196-c2a7c8d08f58?w=800&q=80',
+=======
+<<<<<<< HEAD
+    image: 'https://images.unsplash.com/photo-1626645738196-c2a7c8d08f58?w=800&q=80',
+=======
+    image: '/foods/crispy-chicken.jpg',
+>>>>>>> origin/main
+>>>>>>> origin/main
     healthScore: 45,
     calories: 320,
     protein: 28,
@@ -46,6 +87,10 @@ export const mockFoods: Food[] = [
       protein: 32,
       sugar: 0,
       ingredients: [
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
         '2 Boneless chicken thighs',
         '1/4 cup Cornstarch',
         '1 tsp Paprika',
@@ -57,6 +102,21 @@ export const mockFoods: Food[] = [
         'Coat lightly with cornstarch and spices.',
         'Air fry at 400°F for 15 minutes.',
         'Serve with lemon and fresh herbs.',
+<<<<<<< HEAD
+=======
+=======
+        'Boneless chicken thighs',
+        'Cornstarch coating',
+        'Paprika & garlic powder',
+        'Olive oil spray',
+      ],
+      instructions: [
+        'Pat chicken dry and season',
+        'Coat lightly with cornstarch and spices',
+        'Air fry at 400°F for 15 minutes',
+        'Serve with lemon and fresh herbs',
+>>>>>>> origin/main
+>>>>>>> origin/main
       ],
       healthScore: 72,
     },
@@ -64,7 +124,15 @@ export const mockFoods: Food[] = [
   {
     id: '2',
     name: 'Grilled Chicken Salad',
+<<<<<<< HEAD
     image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&q=80',
+=======
+<<<<<<< HEAD
+    image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&q=80',
+=======
+    image: '/foods/grilled-chicken-salad.jpg',
+>>>>>>> origin/main
+>>>>>>> origin/main
     healthScore: 85,
     calories: 280,
     protein: 35,
@@ -76,6 +144,10 @@ export const mockFoods: Food[] = [
   },
   {
     id: '3',
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
     name: 'Double Cheeseburger',
     image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=80',
     healthScore: 35,
@@ -113,6 +185,13 @@ export const mockFoods: Food[] = [
     id: '4',
     name: 'Chocolate Brownie',
     image: 'https://images.unsplash.com/photo-1564356453-33303649514d?w=800&q=80',
+<<<<<<< HEAD
+=======
+=======
+    name: 'Chocolate Brownie',
+    image: '/foods/chocolate-brownie.jpg',
+>>>>>>> origin/main
+>>>>>>> origin/main
     healthScore: 35,
     calories: 420,
     protein: 5,
@@ -128,6 +207,10 @@ export const mockFoods: Food[] = [
       protein: 8,
       sugar: 14,
       ingredients: [
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
         '1 Ripe avocado',
         '100g Dark chocolate (70% cacao)',
         '1 cup Almond flour',
@@ -141,20 +224,53 @@ export const mockFoods: Food[] = [
         'Fold in eggs and vanilla.',
         'Bake at 350°F for 20 minutes.',
         'Enjoy your guilt-free treat!'
+<<<<<<< HEAD
+=======
+=======
+        'Ripe avocado',
+        'Dark chocolate (70% cacao)',
+        'Almond flour',
+        'Maple syrup',
+        'Eggs',
+        'Vanilla extract',
+      ],
+      instructions: [
+        'Blend avocado with melted chocolate',
+        'Mix in almond flour and maple syrup',
+        'Fold in eggs and vanilla',
+        'Bake at 350°F for 20 minutes',
+>>>>>>> origin/main
+>>>>>>> origin/main
       ],
       healthScore: 68,
     },
   },
   {
+<<<<<<< HEAD
     id: '5',
     name: 'Greek Yogurt Parfait',
     image: 'https://images.unsplash.com/photo-1504610926078-a1611febcad3?w=800&q=80',
+=======
+<<<<<<< HEAD
+    id: '5',
+    name: 'Greek Yogurt Parfait',
+    image: 'https://images.unsplash.com/photo-1504610926078-a1611febcad3?w=800&q=80',
+=======
+    id: '4',
+    name: 'Greek Yogurt Parfait',
+    image: '/foods/greek-yogurt-parfait.jpg',
+>>>>>>> origin/main
+>>>>>>> origin/main
     healthScore: 80,
     calories: 210,
     protein: 18,
     sugar: 18,
     category: 'Breakfast',
     cravingMatch: ['sweet', 'light', 'soft'],
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
     healthierRecipe: {
       name: 'Greek Yogurt Superfood Parfait',
       calories: 190,
@@ -174,13 +290,44 @@ export const mockFoods: Food[] = [
       ],
       healthScore: 90
     },
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> origin/main
+>>>>>>> origin/main
     description:
       'Recommended because it balances your sweet tooth with protein and probiotics. A guilt-free indulgence.',
   },
   {
+<<<<<<< HEAD
     id: '6',
     name: 'Cheesy Pizza Slice',
     image: 'https://images.unsplash.com/photo-1593560704721-fa7878a6d856?w=800&q=80',
+=======
+<<<<<<< HEAD
+    id: '6',
+    name: 'Cheesy Pizza Slice',
+    image: 'https://images.unsplash.com/photo-1593560704721-fa7878a6d856?w=800&q=80',
+=======
+    id: '5',
+    name: 'Crispy Veggie Spring Rolls',
+    image: '/foods/spring-rolls.jpg',
+    healthScore: 70,
+    calories: 180,
+    protein: 4,
+    sugar: 3,
+    category: 'Appetizer',
+    cravingMatch: ['crispy', 'savory', 'light'],
+    healthierAlternative: 'Air-Fried Spring Rolls',
+    description:
+      'Recommended because it satisfies your craving for crispy food with vegetables and fewer calories than fried options.',
+  },
+  {
+    id: '6',
+    name: 'Cheesy Pizza Slice',
+    image: '/foods/pizza.jpg',
+>>>>>>> origin/main
+>>>>>>> origin/main
     healthScore: 50,
     calories: 350,
     protein: 12,
@@ -196,6 +343,10 @@ export const mockFoods: Food[] = [
       protein: 14,
       sugar: 3,
       ingredients: [
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
         '1 Whole wheat pizza dough',
         '1/2 cup Marinara sauce',
         '1 cup Part-skim mozzarella',
@@ -207,12 +358,32 @@ export const mockFoods: Food[] = [
         'Layer veggies and cheese.',
         'Bake at 425°F for 12-15 minutes.',
         'Top with fresh basil.',
+<<<<<<< HEAD
+=======
+=======
+        'Whole wheat pizza dough',
+        'Marinara sauce',
+        'Part-skim mozzarella',
+        'Bell peppers, mushrooms, spinach',
+        'Fresh basil & olive oil',
+      ],
+      instructions: [
+        'Spread marinara on whole wheat crust',
+        'Layer veggies and cheese',
+        'Bake at 425°F for 12-15 minutes',
+        'Top with fresh basil',
+>>>>>>> origin/main
+>>>>>>> origin/main
       ],
       healthScore: 78,
     },
   },
   {
     id: '7',
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
     name: 'Classic Pepperoni Pizza',
     image: 'https://bhuaffcpzfeiqzheclrw.supabase.co/storage/v1/object/public/food_pics/pizza.jpg',
     healthScore: 55,
@@ -280,6 +451,34 @@ export const mockFoods: Food[] = [
       ],
       healthScore: 92
     }
+<<<<<<< HEAD
+=======
+=======
+    name: 'Smoothie Bowl',
+    image: '/foods/smoothie-bowl.jpg',
+    healthScore: 82,
+    calories: 320,
+    protein: 12,
+    sugar: 32,
+    category: 'Breakfast',
+    cravingMatch: ['sweet', 'light', 'tired'],
+    description:
+      'Recommended because it energizes you with natural sweetness and superfoods. Perfect for a nutrient boost.',
+  },
+  {
+    id: '8',
+    name: 'Buffalo Cauliflower Bites',
+    image: '/foods/buffalo-cauliflower.jpg',
+    healthScore: 75,
+    calories: 150,
+    protein: 6,
+    sugar: 2,
+    category: 'Appetizer',
+    cravingMatch: ['crispy', 'savory', 'energetic'],
+    description:
+      'Recommended because it offers a healthier take on wings with fewer calories and more vegetables.',
+>>>>>>> origin/main
+>>>>>>> origin/main
   },
 ]
 
@@ -288,7 +487,15 @@ export function getRecommendedFoods(
   healthPreference?: number
 ): Food[] {
   if (!quizAnswers || Object.keys(quizAnswers).length === 0) {
+<<<<<<< HEAD
     return [...mockFoods].sort((a, b) => b.healthScore - a.healthScore)
+=======
+<<<<<<< HEAD
+    return [...mockFoods].sort((a, b) => b.healthScore - a.healthScore)
+=======
+    return mockFoods.sort((a, b) => b.healthScore - a.healthScore)
+>>>>>>> origin/main
+>>>>>>> origin/main
   }
 
   const answers = Object.values(quizAnswers).map((a) => a.toLowerCase())
@@ -304,10 +511,25 @@ export function getRecommendedFoods(
       }
     })
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
     // Apply health preference (0 = indulgent, 50 = balanced, 100 = healthy)
     const normalizedHealth = (preference - 50) / 50
     const healthInfluence = normalizedHealth * normalizedHealth * normalizedHealth * 50
 
+<<<<<<< HEAD
+=======
+=======
+    // Apply health preference with stronger influence (0 = indulgent, 50 = balanced, 100 = healthy)
+    // Use exponential scaling for more dramatic changes
+    const normalizedHealth = (preference - 50) / 50
+    const healthInfluence = normalizedHealth * normalizedHealth * normalizedHealth * 50
+
+    // Boost healthy foods when preference > 50, boost indulgent when < 50
+>>>>>>> origin/main
+>>>>>>> origin/main
     if (preference > 50) {
       score += (food.healthScore / 100) * healthInfluence
     } else if (preference < 50) {

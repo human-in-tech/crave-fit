@@ -15,6 +15,7 @@ import {
 import { MealEntryForm } from '@/components/meal-entry-form'
 import { NutritionProgressBar } from '@/components/nutrition-progress-bar'
 import { MealSuggestions } from '@/components/meal-suggestions'
+<<<<<<< HEAD
 import { calcCalories } from '@/lib/calc-calories'
 import { supabase } from "@/lib/supabase"
 import { updateDailyLogs } from "@/lib/update-daily-logs"
@@ -36,6 +37,23 @@ type MealRow = {
   time: string
   date: string
 }
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import { mockProfile } from '@/lib/mock-profile'
+import { calcCalories } from '@/lib/calc-calories'
+import { fetchNutrition } from '@/lib/nutrition-api'
+=======
+<<<<<<< HEAD
+import { mockProfile } from '@/lib/mock-profile'
+import { calcCalories } from '@/lib/calc-calories'
+import { fetchNutrition } from '@/lib/nutrition-api'
+=======
+>>>>>>> 1154a2da7d7b6d875836dc60b9665c645596fa24
+>>>>>>> origin/main
+>>>>>>> origin/main
+>>>>>>> origin/main
 
 interface MealTrackerProps {
   onBack: () => void
@@ -45,6 +63,7 @@ export function MealTracker({ onBack }: MealTrackerProps) {
   const [meals, setMeals] = useState<MealEntry[]>([])
   const [showAddMeal, setShowAddMeal] = useState(false)
   const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split('T')[0])
+<<<<<<< HEAD
   const [user, setUser] = useState<any>(null)
   const [profile, setProfile] = useState<any>(null)
   const [waterMl, setWaterMl] = useState(0)
@@ -158,6 +177,18 @@ useEffect(() => {
 
   fetchMeals()
 }, [selectedDate, user])
+=======
+
+  // Load meals from localStorage
+  useEffect(() => {
+    const stored = localStorage.getItem(`meals_${selectedDate}`)
+    if (stored) {
+      setMeals(JSON.parse(stored))
+    } else {
+      setMeals([])
+    }
+  }, [selectedDate])
+>>>>>>> origin/main
 
   // Save meals to localStorage
   useEffect(() => {
@@ -167,6 +198,7 @@ useEffect(() => {
   }, [meals, selectedDate])
 
   const progress = calculateProgress(meals)
+<<<<<<< HEAD
 
   const calorieGoal = profile
   ? calcCalories(profile)
@@ -195,6 +227,23 @@ useEffect(() => {
   fat: macroGoals.fat,
   fiber: 25,
 }
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
+
+  // 🔥 Calculate calorie goal from profile
+  const calorieGoal = calcCalories(mockProfile)
+
+  // Override only calories (macros stay same)
+  const dynamicGoals = {
+    ...DEFAULT_DAILY_GOALS,
+    calories: calorieGoal,
+  }
+>>>>>>> origin/main
 
   const dailyProgress: DailyProgress = {
     date: selectedDate,
@@ -203,6 +252,7 @@ useEffect(() => {
     ...progress,
   }
 
+<<<<<<< HEAD
 
 
   const suggestedMeals = getSuggestedMeals(dailyProgress)
@@ -266,6 +316,48 @@ useEffect(() => {
 
 }
 
+=======
+  /*
+  🔗 FUTURE SUPABASE INTEGRATION
+
+  Replace mockProfile with:
+
+  const { data } = await supabase
+    .from("users")
+    .select("*")
+    .eq("id", userId)
+    .single()
+  */
+
+
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> origin/main
+  const dailyProgress: DailyProgress = {
+    date: selectedDate,
+    meals,
+    goals: DEFAULT_DAILY_GOALS,
+    ...progress,
+  }
+
+<<<<<<< HEAD
+=======
+>>>>>>> 1154a2da7d7b6d875836dc60b9665c645596fa24
+>>>>>>> origin/main
+>>>>>>> origin/main
+  const suggestedMeals = getSuggestedMeals(dailyProgress)
+
+  const handleAddMeal = (meal: MealEntry) => {
+    setMeals([...meals, { ...meal, id: Date.now().toString() }])
+    setShowAddMeal(false)
+  }
+
+  const handleDeleteMeal = (id: string) => {
+    setMeals(meals.filter((m) => m.id !== id))
+  }
+
+>>>>>>> origin/main
   const handlePreviousDay = () => {
     const date = new Date(selectedDate)
     date.setDate(date.getDate() - 1)
@@ -374,7 +466,11 @@ useEffect(() => {
                   </svg>
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
                     <p className="text-3xl font-bold text-foreground">
+<<<<<<< HEAD
                       {Math.round(dailyProgress.totalCalories)}
+=======
+                      {dailyProgress.totalCalories}
+>>>>>>> origin/main
                     </p>
                     <p className="text-xs text-muted-foreground">
                       / {dailyProgress.goals.calories}
@@ -383,11 +479,18 @@ useEffect(() => {
                 </div>
                 <p className="text-center text-sm font-semibold text-foreground">
                   {dailyProgress.goals.calories - dailyProgress.totalCalories > 0
+<<<<<<< HEAD
                     ? `${Math.round(dailyProgress.goals.calories - dailyProgress.totalCalories)} left`
                     : 'Goal reached!'}
                 </p>
               </div>
               
+=======
+                    ? `${dailyProgress.goals.calories - dailyProgress.totalCalories} left`
+                    : 'Goal reached!'}
+                </p>
+              </div>
+>>>>>>> origin/main
 
               {/* Macros Summary */}
               <div className="space-y-4">
@@ -454,6 +557,7 @@ useEffect(() => {
             </div>
           </div>
 
+<<<<<<< HEAD
            {/* 💧 Water Intake Tracker */}
 <Card className="p-6 bg-gradient-to-br from-cyan-50 to-blue-50 border border-cyan-200">
 
@@ -502,6 +606,8 @@ useEffect(() => {
   </div>
 </Card>
 
+=======
+>>>>>>> origin/main
           {/* Meals Logged Today */}
           <div>
             <div className="flex items-center justify-between mb-5">
@@ -536,17 +642,53 @@ useEffect(() => {
                 </Button>
               </Card>
             ) : (
+<<<<<<< HEAD
               <div className="space-y-4 max-h-[260px] overflow-y-auto pr-2">
+=======
+<<<<<<< HEAD
+              <div className="space-y-4">
+=======
+<<<<<<< HEAD
+              <div className="space-y-4 max-h-[260px] overflow-y-auto pr-2">
+=======
+<<<<<<< HEAD
+              <div className="space-y-4 max-h-[260px] overflow-y-auto pr-2">
+=======
+              <div className="space-y-4">
+>>>>>>> 1154a2da7d7b6d875836dc60b9665c645596fa24
+>>>>>>> origin/main
+>>>>>>> origin/main
+>>>>>>> origin/main
                 {meals.map((meal) => (
                   <Card key={meal.id} className="p-5 hover:shadow-md transition-shadow">
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-3">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                          <p className="font-bold text-lg text-foreground">{meal.name}</p>
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
+>>>>>>> origin/main
                           <p className="font-bold text-lg text-foreground">
                             {meal.detectedFood
                               ? `${meal.detectedFood} (${meal.name})`
                               : meal.name}
                           </p>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+                          <p className="font-bold text-lg text-foreground">{meal.name}</p>
+>>>>>>> 1154a2da7d7b6d875836dc60b9665c645596fa24
+>>>>>>> origin/main
+>>>>>>> origin/main
+>>>>>>> origin/main
                           <span className="text-xs font-semibold bg-primary/10 text-primary px-3 py-1 rounded-full">
                             {meal.time}
                           </span>
@@ -592,4 +734,7 @@ useEffect(() => {
     </div>
   )
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
