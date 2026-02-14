@@ -17,7 +17,10 @@ body {
     from {
       opacity: 0;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
     to {
       opacity: 1;
     }
@@ -28,7 +31,10 @@ body {
       opacity: 0;
       transform: translateY(20px);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
     to {
       opacity: 1;
       transform: translateY(0);
@@ -40,13 +46,17 @@ body {
       opacity: 0;
       transform: translateY(-20px);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
 
+<<<<<<< HEAD
   @keyframes float {
 
     0%,
@@ -121,11 +131,17 @@ body {
 
   @keyframes pulse-soft {
 
+=======
+  @keyframes pulse-soft {
+>>>>>>> origin/main
     0%,
     100% {
       opacity: 1;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
     50% {
       opacity: 0.8;
     }
@@ -148,6 +164,7 @@ body {
   .animate-pulse-soft {
     animation: pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
+<<<<<<< HEAD
 
   .animate-float {
     animation: float 10s ease-in-out infinite;
@@ -218,6 +235,8 @@ body {
     transform: rotateX(0deg) rotateY(0deg) scale(0.95) translateZ(-20px) !important;
     box-shadow: inset 0 0 20px rgba(16, 185, 129, 0.1) !important;
   }
+=======
+>>>>>>> origin/main
 }
 
 @layer base {
@@ -256,7 +275,10 @@ body {
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -297,8 +319,15 @@ body {
   * {
     @apply border-border;
   }
+<<<<<<< HEAD
 
   body {
     @apply bg-background text-foreground;
   }
 }
+=======
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+>>>>>>> origin/main

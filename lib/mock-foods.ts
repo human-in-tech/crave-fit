@@ -4,10 +4,14 @@ export interface Food {
   image: string
   healthScore: number
   calories: number
+<<<<<<< HEAD
   carbs?: number
   protein: number
   fat?:number
   dietType?: string
+=======
+  protein: number
+>>>>>>> origin/main
   sugar: number
   category: string
   cravingMatch: string[]
@@ -16,12 +20,19 @@ export interface Food {
   healthierRecipe?: {
     name: string
     calories: number
+<<<<<<< HEAD
     carbs?: number
     fat?: number
     protein: number
     sugar: number
     ingredients: string[]
     instructions?: string[]
+=======
+    protein: number
+    sugar: number
+    ingredients: string[]
+    instructions: string[]
+>>>>>>> origin/main
     healthScore: number
   }
 }

@@ -1,11 +1,25 @@
 'use client'
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
 import React, { useState } from "react"
 import { Button } from '@/components/ui/button'
 import type { MealEntry } from '@/lib/meal-tracking'
 import { MEAL_SUGGESTIONS } from '@/lib/meal-tracking' // 🔥 ADD
 import { fetchNutrition } from '@/lib/nutrition-api'
 import { detectFoodFromImage } from '@/lib/food-detection'
+<<<<<<< HEAD
+=======
+=======
+import React from "react"
+
+import { useState } from 'react'
+import { Button } from '@/components/ui/button'
+import type { MealEntry } from '@/lib/meal-tracking'
+>>>>>>> 1154a2da7d7b6d875836dc60b9665c645596fa24
+>>>>>>> origin/main
 
 interface MealEntryFormProps {
   onSave: (meal: Omit<MealEntry, 'id'>) => void
@@ -13,6 +27,10 @@ interface MealEntryFormProps {
 }
 
 export function MealEntryForm({ onSave, onCancel }: MealEntryFormProps) {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
 
   const [mode, setMode] = useState<
     "manual" | "macro" | "photo" | "quick"
@@ -22,6 +40,11 @@ export function MealEntryForm({ onSave, onCancel }: MealEntryFormProps) {
   const [photoFile, setPhotoFile] = useState<File | null>(null)
   const [photoLoading, setPhotoLoading] = useState(false)
   // 🔹 EXISTING FORM STATE (UNCHANGED)
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 1154a2da7d7b6d875836dc60b9665c645596fa24
+>>>>>>> origin/main
   const [formData, setFormData] = useState({
     name: '',
     calories: 0,
@@ -29,6 +52,10 @@ export function MealEntryForm({ onSave, onCancel }: MealEntryFormProps) {
     carbs: 0,
     fat: 0,
     fiber: 0,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
     time: new Date()
       .toLocaleTimeString('en-US', {
         hour: '2-digit',
@@ -128,6 +155,29 @@ export function MealEntryForm({ onSave, onCancel }: MealEntryFormProps) {
 
 
     // Reset
+<<<<<<< HEAD
+=======
+=======
+    time: new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false }).slice(0, 5),
+  })
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!formData.name.trim()) {
+      alert('Please enter a meal name')
+      return
+    }
+    onSave({
+      name: formData.name,
+      calories: Number(formData.calories),
+      protein: Number(formData.protein),
+      carbs: Number(formData.carbs),
+      fat: Number(formData.fat),
+      fiber: Number(formData.fiber),
+      time: formData.time,
+    })
+>>>>>>> 1154a2da7d7b6d875836dc60b9665c645596fa24
+>>>>>>> origin/main
     setFormData({
       name: '',
       calories: 0,
@@ -135,6 +185,10 @@ export function MealEntryForm({ onSave, onCancel }: MealEntryFormProps) {
       carbs: 0,
       fat: 0,
       fiber: 0,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
       time: new Date()
         .toLocaleTimeString('en-US', {
           hour: '2-digit',
@@ -142,11 +196,21 @@ export function MealEntryForm({ onSave, onCancel }: MealEntryFormProps) {
           hour12: false
         })
         .slice(0, 5),
+<<<<<<< HEAD
+=======
+=======
+      time: new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false }).slice(0, 5),
+>>>>>>> 1154a2da7d7b6d875836dc60b9665c645596fa24
+>>>>>>> origin/main
     })
   }
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
 
       {/* 🔥 MODE SWITCHER (NEW) */}
       <div className="grid grid-cols-4 gap-2">
@@ -291,6 +355,100 @@ export function MealEntryForm({ onSave, onCancel }: MealEntryFormProps) {
       )}
 
       {/* SUBMIT BUTTONS — UNCHANGED */}
+<<<<<<< HEAD
+=======
+=======
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label className="block text-sm font-semibold text-foreground mb-2">Meal Name *</label>
+          <input
+            type="text"
+            value={formData.name}
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+            placeholder="e.g. Grilled Chicken with Rice"
+            className="w-full px-4 py-2 rounded-lg border border-border/30 focus:outline-none focus:ring-2 focus:ring-primary"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-semibold text-foreground mb-2">Time</label>
+          <input
+            type="time"
+            value={formData.time}
+            onChange={(e) => setFormData({ ...formData, time: e.target.value })}
+            className="w-full px-4 py-2 rounded-lg border border-border/30 focus:outline-none focus:ring-2 focus:ring-primary"
+          />
+        </div>
+      </div>
+
+      <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
+        <div>
+          <label className="block text-xs font-semibold text-muted-foreground mb-1 uppercase">
+            Calories
+          </label>
+          <input
+            type="number"
+            value={formData.calories}
+            onChange={(e) => setFormData({ ...formData, calories: parseFloat(e.target.value) || 0 })}
+            placeholder="0"
+            className="w-full px-3 py-2 rounded-lg border border-border/30 focus:outline-none focus:ring-2 focus:ring-primary text-sm"
+          />
+        </div>
+        <div>
+          <label className="block text-xs font-semibold text-muted-foreground mb-1 uppercase">
+            Protein (g)
+          </label>
+          <input
+            type="number"
+            step="0.1"
+            value={formData.protein}
+            onChange={(e) => setFormData({ ...formData, protein: parseFloat(e.target.value) || 0 })}
+            placeholder="0"
+            className="w-full px-3 py-2 rounded-lg border border-border/30 focus:outline-none focus:ring-2 focus:ring-primary text-sm"
+          />
+        </div>
+        <div>
+          <label className="block text-xs font-semibold text-muted-foreground mb-1 uppercase">
+            Carbs (g)
+          </label>
+          <input
+            type="number"
+            step="0.1"
+            value={formData.carbs}
+            onChange={(e) => setFormData({ ...formData, carbs: parseFloat(e.target.value) || 0 })}
+            placeholder="0"
+            className="w-full px-3 py-2 rounded-lg border border-border/30 focus:outline-none focus:ring-2 focus:ring-primary text-sm"
+          />
+        </div>
+        <div>
+          <label className="block text-xs font-semibold text-muted-foreground mb-1 uppercase">
+            Fat (g)
+          </label>
+          <input
+            type="number"
+            step="0.1"
+            value={formData.fat}
+            onChange={(e) => setFormData({ ...formData, fat: parseFloat(e.target.value) || 0 })}
+            placeholder="0"
+            className="w-full px-3 py-2 rounded-lg border border-border/30 focus:outline-none focus:ring-2 focus:ring-primary text-sm"
+          />
+        </div>
+        <div>
+          <label className="block text-xs font-semibold text-muted-foreground mb-1 uppercase">
+            Fiber (g)
+          </label>
+          <input
+            type="number"
+            step="0.1"
+            value={formData.fiber}
+            onChange={(e) => setFormData({ ...formData, fiber: parseFloat(e.target.value) || 0 })}
+            placeholder="0"
+            className="w-full px-3 py-2 rounded-lg border border-border/30 focus:outline-none focus:ring-2 focus:ring-primary text-sm"
+          />
+        </div>
+      </div>
+
+>>>>>>> 1154a2da7d7b6d875836dc60b9665c645596fa24
+>>>>>>> origin/main
       <div className="flex gap-3 pt-4">
         <Button
           type="submit"
@@ -298,7 +456,14 @@ export function MealEntryForm({ onSave, onCancel }: MealEntryFormProps) {
         >
           Add Meal
         </Button>
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> 1154a2da7d7b6d875836dc60b9665c645596fa24
+>>>>>>> origin/main
         <Button
           type="button"
           variant="outline"

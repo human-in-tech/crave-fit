@@ -1,14 +1,37 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
+<<<<<<< HEAD
 import { Utensils, LayoutDashboard, Search, UtensilsCrossed, LogIn, LogOut, Sparkles, UserCircle } from 'lucide-react'
 import { supabase } from '@/lib/supabase'
+=======
+<<<<<<< HEAD
+import { Utensils, LayoutDashboard, Search, UtensilsCrossed, LogIn, LogOut, Sparkles } from 'lucide-react'
+import { authStorage } from '@/lib/auth'
+=======
+import { Utensils, LayoutDashboard, Search, UtensilsCrossed, LogIn, LogOut, Sparkles, UserCircle } from 'lucide-react'
+import { supabase } from '@/lib/supabase'
+>>>>>>> 1154a2da7d7b6d875836dc60b9665c645596fa24
+>>>>>>> origin/main
 import { useRouter } from 'next/navigation'
 
 interface HeaderProps {
     currentView: string
     onNavigate: (view: any) => void
     isLoggedIn: boolean
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+}
+
+export function Header({ currentView, onNavigate, isLoggedIn }: HeaderProps) {
+    const router = useRouter()
+
+    const handleLogout = () => {
+        authStorage.logout()
+        window.location.reload()
+=======
+>>>>>>> origin/main
     userData?: {
         full_name?: string
         avatar_url?: string
@@ -21,6 +44,10 @@ export function Header({ currentView, onNavigate, isLoggedIn, userData }: Header
     const handleLogout = async () => {
         await supabase.auth.signOut()
         router.push('/')
+<<<<<<< HEAD
+=======
+>>>>>>> 1154a2da7d7b6d875836dc60b9665c645596fa24
+>>>>>>> origin/main
     }
 
     const handleLogin = () => {
@@ -64,9 +91,15 @@ export function Header({ currentView, onNavigate, isLoggedIn, userData }: Header
                     </Button>
 
                     <Button
+<<<<<<< HEAD
                         variant={currentView === 'browse' ? 'secondary' : 'ghost'}
                         size="sm"
                         onClick={() => onNavigate('browse')}
+=======
+                        variant={currentView === 'recommendations' ? 'secondary' : 'ghost'}
+                        size="sm"
+                        onClick={() => onNavigate('recommendations')}
+>>>>>>> origin/main
                         className="flex items-center gap-2 font-semibold"
                     >
                         <Search className="w-4 h-4" />
@@ -82,6 +115,11 @@ export function Header({ currentView, onNavigate, isLoggedIn, userData }: Header
                         <UtensilsCrossed className="w-4 h-4" />
                         <span className="hidden md:inline">Tracker</span>
                     </Button>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> origin/main
 
                     <Button
                         variant={currentView === 'profile' ? 'secondary' : 'ghost'}
@@ -98,6 +136,10 @@ export function Header({ currentView, onNavigate, isLoggedIn, userData }: Header
                         </div>
                         <span className="hidden md:inline">{userData?.full_name?.split(' ')[0] || 'Profile'}</span>
                     </Button>
+<<<<<<< HEAD
+=======
+>>>>>>> 1154a2da7d7b6d875836dc60b9665c645596fa24
+>>>>>>> origin/main
                 </nav>
 
                 {/* Auth Actions */}
